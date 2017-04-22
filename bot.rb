@@ -48,6 +48,11 @@ client.on :message do |data|
     client.web_client.chat_postMessage(post_message_payload(data))
     logger.debug("Attachment message posted")
 
+  when 'play' then
+    # attachment messages require using web_client
+    client.web_client.chat_postMessage(play_game(data))
+    logger.debug("Attachment message posted")
+
   when bot_mentioned(client)
     client.message channel: data['channel'], text: 'You really do care about me. :heart:'
     logger.debug("Bot mentioned in channel #{data['channel']}")
@@ -104,7 +109,7 @@ def post_message_payload(data)
 end
 
 def play_game(data)
-  main_msg = 'Beep Beep Boop is a ridiculously simple hosting platform for your Slackbots.',
+  main_msg = 'You are unable to choose a game.',
   {
       channel: data['channel'],
       as_user: true,
@@ -112,7 +117,7 @@ def play_game(data)
       attachments: [
         {
           text: "Choose a game to play",
-          fallback: "You are unable to choose a game",
+          fallback: main_msg,
           callback_id: "wopr_game",
           color: "#3AA3E3",
           attachment_type: "default",

@@ -5,14 +5,14 @@ logger = Logging.logger(STDOUT)
 logger.level = :debug
 
 Slack.configure do |config|
-  config.token = ENV['SLACK_TOKEN']
+  config.token = ENV['xoxp-170624718805-171341253878-172987013715-9ffee47480a06078c621d13be4b095b9']
   if not config.token
     logger.fatal('Missing ENV[SLACK_TOKEN]! Exiting program')
     exit
   end
 end
 
-client = Slack::RealTime::Client.new 
+client = Slack::RealTime::Client.new
 
 # listen for hello (connection) event - https://api.slack.com/events/hello
 client.on :hello do

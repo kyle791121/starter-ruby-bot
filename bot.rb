@@ -111,45 +111,58 @@ end
 def play_game(data)
   main_msg = 'You are unable to choose a game.',
   {
-      channel: data['channel'],
+    channel: data['channel'],
       as_user: true,
-      text: 'Would you like to play a game?',
       attachments: [
         {
-          text: 'Choose a game to play',
           fallback: main_msg,
-          callback_id: 'wopr_game',
-          color: '#3AA3E3',
-          attachment_type: 'default',
-          actions: [
-              {
-                  name: 'game',
-                  text: 'Chess',
-                  type: 'button',
-                  value: 'chess'
-              },
-              {
-                  name: 'game',
-                  text: 'Falken\'s Maze',
-                  type: 'button',
-                  value: 'maze'
-              },
-              {
-                  name: 'game',
-                  text: 'Thermonuclear War',
-                  style: 'danger',
-                  type: 'button',
-                  value: 'war',
-                  confirm: {
-                      title: 'Are you sure?',
-                      text: 'Wouldn\'t you prefer a good game of chess?',
-                      ok_text: 'Yes',
-                      dismiss_text: 'No'
-                  }
-              }
-          ]
+          pretext: 'We bring bots to life. :sunglasses: :thumbsup:',
+          title: 'Host, deploy and share your bot in seconds.',
+          image_url: 'https://storage.googleapis.com/beepboophq/_assets/bot-1.22f6fb.png',
+          title_link: 'https://beepboophq.com/',
+          text: main_msg,
+          color: '#7CD197'
         }
       ]
+      # channel: data['channel'],
+      # as_user: true,
+      # text: 'Would you like to play a game?',
+      # attachments: [
+      #   {
+      #     text: 'Choose a game to play',
+      #     fallback: main_msg,
+      #     callback_id: 'wopr_game',
+      #     color: '#3AA3E3',
+      #     attachment_type: 'default',
+      #     actions: [
+      #         {
+      #             name: 'game',
+      #             text: 'Chess',
+      #             type: 'button',
+      #             value: 'chess'
+      #         },
+      #         {
+      #             name: 'game',
+      #             text: 'Falken\'s Maze',
+      #             type: 'button',
+      #             value: 'maze'
+      #         },
+      #         {
+      #             name: 'game',
+      #             text: 'Thermonuclear War',
+      #             style: 'danger',
+      #             type: 'button',
+      #             value: 'war',
+      #             confirm: {
+      #                 title: 'Are you sure?',
+      #                 text: 'Wouldn\'t you prefer a good game of chess?',
+      #                 ok_text: 'Yes',
+      #                 dismiss_text: 'No'
+      #             }
+      #         }
+      #     ]
+      #   }
+      # ]
   }
 end
 

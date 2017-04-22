@@ -12,7 +12,7 @@ Slack.configure do |config|
   end
 end
 
-client = Slack::RealTime::Client.new
+client = Slack::RealTime::Client.new 
 
 # listen for hello (connection) event - https://api.slack.com/events/hello
 client.on :hello do

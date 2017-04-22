@@ -108,7 +108,7 @@ def play_game(data)
   {
       channel: data['channel'],
       as_user: true,
-      text: "Would you like to play a game?"
+      text: "Would you like to play a game?",
       attachments: [
         {
           text: "Choose a game to play",

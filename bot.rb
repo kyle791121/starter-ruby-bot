@@ -109,7 +109,7 @@ def post_message_payload(data)
 end
 
 def play_game(data)
-  main_msg = 'You are unable to choose a game.',
+  main_msg = 'Beep Beep Boop is a ridiculously simple hosting platform for your Slackbots.'
   {
     channel: data['channel'],
       as_user: true,

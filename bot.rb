@@ -5,7 +5,7 @@ logger = Logging.logger(STDOUT)
 logger.level = :debug
 
 Slack.configure do |config|
-  config.token = ENV['xoxp-170624718805-171341253878-172987013715-9ffee47480a06078c621d13be4b095b9']
+  config.token = ENV['SLACK_TOKEN']
   if not config.token
     logger.fatal('Missing ENV[SLACK_TOKEN]! Exiting program')
     exit
